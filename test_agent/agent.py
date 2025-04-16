@@ -1,15 +1,14 @@
+from datetime import datetime
+
+import pytz
 from dotenv import load_dotenv
 from google.adk.agents import Agent
 from google.adk.models.lite_llm import LiteLlm
-from google.adk.runners import Runner
-from google.adk.sessions import InMemorySessionService
-from google.genai import types
-import pytz
-from datetime import datetime
 
 load_dotenv()
 
 AGENT_MODEL = "azure/gpt-4o-mini"
+
 
 def get_time(timezone: str) -> dict:
     """Retrieves the current local time for a specified timezone.
@@ -37,15 +36,16 @@ def get_time(timezone: str) -> dict:
             "error_message": f"Sorry, I don't have time information for '{timezone}'.",
         }
 
+
 root_agent = Agent(
     name="time_agent",
     model=LiteLlm(model=AGENT_MODEL),
     description="Provides current time for specified timezone",
     instruction="You are a helpful time assistant. Your primary goal is to provide the current time for given timezones or cities. "
-                "When the user asks for the time in a specific city or time zone "
-                "you MUST use the 'get_time' tool to find the information. "
-                "Analyze the tool's response: if the status is 'error', inform the user politely about the error message. "
-                "If the status is 'success', present the information clearly and concisely to the user. "
-                "Only use the tools when appropriate for a time-related request.",
+    "When the user asks for the time in a specific city or time zone "
+    "you MUST use the 'get_time' tool to find the information. "
+    "Analyze the tool's response: if the status is 'error', inform the user politely about the error message. "
+    "If the status is 'success', present the information clearly and concisely to the user. "
+    "Only use the tools when appropriate for a time-related request.",
     tools=[get_time],
 )
