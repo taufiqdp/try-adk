@@ -6,6 +6,7 @@ A sample project demonstrating the use of [Google Agent Development Kit (ADK)](h
 
 - Search agent using TavilySearch.
 - Time agent providing current time for any timezone.
+- Calculator agent for mathematical operations.
 
 ## Requirements
 
