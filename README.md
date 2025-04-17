@@ -11,6 +11,7 @@ A sample project demonstrating the use of [Google Agent Development Kit (ADK)](h
 
 - Python 3.13+
 - uv
+- gpt-4o-mini (via Azure OpenAI)
 
 ## Setup
 
