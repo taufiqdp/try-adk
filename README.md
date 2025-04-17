@@ -1,6 +1,6 @@
 # try-adk
 
-A sample project demonstrating the use of (Google ADK agents)[https://github.com/google/adk-python].
+A sample project demonstrating the use of [Google Agent Development Kit (ADK)](https://github.com/google/adk-python).
 
 ## Features
 
