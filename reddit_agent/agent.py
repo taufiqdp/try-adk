@@ -5,7 +5,6 @@ from dotenv import load_dotenv
 from google.adk.agents import Agent
 from google.adk.models.lite_llm import LiteLlm
 
-
 load_dotenv()
 client_id = os.getenv("REDDIT_CLIENT_ID")
 client_secret = os.getenv("REDDIT_CLIENT_SECRET")
@@ -69,5 +68,5 @@ root_agent = Agent(
     You can use the 'get_reddit_hot_posts_tool' to fetch the hot posts from a subreddit.
     Present the information as a concise, bulleted list. Clearly state which subreddit(s) the information came from. 
     If the tool indicates an error or an unknown subreddit, report that message directly.
-    """
+    """,
 )
