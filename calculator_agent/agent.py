@@ -12,7 +12,7 @@ base_url = os.getenv("DOCKER_BASE_URL")
 
 def code_execution_tool(code: str) -> str:
     """
-    Execute ONLY python code and return the result.
+    Execute python code and return the result.
 
     Args:
         code (str): The code to execute.
@@ -22,7 +22,8 @@ def code_execution_tool(code: str) -> str:
         def calculate_square_root(number):
             return math.sqrt(number)
 
-        print(calculate_square_root(16))
+        resutl = calculate_square_root(16)
+        print(result)
         '''
 
     Returns:
